@@ -31,18 +31,18 @@ public class UserController {
         return given(this.requestSpecification)
                 .body(user)
                 .when()
-                .put(USER_ENDPOINT + "/" + user.getUserName())
+                .put(USER_ENDPOINT + "/" + user.getUsername())
                 .andReturn();
     }
 
-    public Response getUserByUserName(String userName) {
+    public Response getUserByUsername(String username) {
         return given(this.requestSpecification)
                 .when()
-                .get(USER_ENDPOINT + "/" + userName)
+                .get(USER_ENDPOINT + "/" + username)
                 .andReturn();
     }
 
-    public Response deleteUserByUserName(String userName) {
+    public Response deleteUserByUsername(String userName) {
         return given(this.requestSpecification)
                 .when()
                 .delete(USER_ENDPOINT + "/" + userName)

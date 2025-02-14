@@ -1,7 +1,8 @@
 package models;
 
-import groovy.transform.builder.Builder;
+
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 
 @Data
@@ -9,7 +10,7 @@ import lombok.Data;
 @Builder
 public class User {
     private int id;
-    private String userName;
+    private String username;
     private String firstName;
     private String lastName;
     private String email;
