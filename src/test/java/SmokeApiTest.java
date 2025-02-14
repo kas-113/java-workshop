@@ -82,7 +82,7 @@ public class SmokeApiTest {
                 "phone",
                 0);
 
-        User userBuilder = User.builder()
+        User userBuilder = User.builder() //использование паттерна builder
                 .username("username")
                 .firstName("firstName")
                 .lastName("lastName")
