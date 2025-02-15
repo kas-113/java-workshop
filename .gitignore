@@ -8,7 +8,6 @@ build/
 .idea/
 *.iml
 out/
-/src/test/resources/*.properties
 
 ### Eclipse ###
 .apt_generated
@@ -35,4 +34,7 @@ bin/
 ### Mac OS ###
 .DS_Store
 
+default.properties
+dev.properties
+test.properties
 
