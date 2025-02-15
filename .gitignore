@@ -8,7 +8,7 @@ build/
 .idea/
 *.iml
 out/
-/src/test/resources/*.properties
+*.properties
 
 ### Eclipse ###
 .apt_generated
