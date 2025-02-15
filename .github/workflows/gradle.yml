@@ -17,14 +17,14 @@ jobs:
     permissions:
       contents: write
       pages: write
-
+      
     services:
       selenium:
         image: selenium/standalone-chrome:latest
         options: --shm-size 2g
         ports:
           - 4444:4444
-
+          
     steps:
     - uses: actions/checkout@v4
     - name: Set up JDK 17
@@ -44,7 +44,7 @@ jobs:
     - name: Build with Gradle Wrapper
       env:
         SELENIUM_REMOTE_URL: http://localhost:4444/wd/hub
-      run: ./gradlew clean test
+      run: ./gradlew clean test 
 
     # NOTE: The Gradle Wrapper is the default and recommended way to run Gradle (https://docs.gradle.org/current/userguide/gradle_wrapper.html).
     # If your project does not have the Gradle Wrapper configured, you can use the following configuration to run Gradle with a specified version.
@@ -63,7 +63,7 @@ jobs:
       with:
         ref: gh-pages
         path: gh-pages
-        
+
     - name: Build Report
       uses: simple-elf/allure-report-action@v1.10
       if: always()
@@ -79,3 +79,10 @@ jobs:
         PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         PUBLISH_BRANCH: gh-pages
         PUBLISH_DIR: allure-history
+
+
+
+    # Generates and submits a dependency graph, enabling Dependabot Alerts for all project dependencies.
+    # See: https://github.com/gradle/actions/blob/main/dependency-submission/README.md
+    #- name: Generate and submit dependency graph
+     # uses: gradle/actions/dependency-submission@af1da67850ed9a4cedd57bfd976089dd991e2582 # v4.0.0
